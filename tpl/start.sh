@@ -1,6 +1,6 @@
 #!/bin/bash
 
-output=$(xvfb-run -a node /test/{{name}}/index.js);
+output=$(node /{{name}}/index.js);
 
 echo "$output";
 if [[ "$output" =~ "success" ]]

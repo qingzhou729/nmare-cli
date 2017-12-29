@@ -7,7 +7,7 @@
  * @author yuki.yang
  */
 
-const loginCookie = require('./cookie').loginCookie; // 获得登录cookie
+const loginCookie = require('./cookie').loginCookie;
 
 module.exports = () => {
     const splitArr = loginCookie.split(';');

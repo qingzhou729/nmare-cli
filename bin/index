@@ -2,7 +2,7 @@
 
 /**
  * @description nmare
- * @author yuxue.yang@husor.com
+ * @author yuki.yang
  */
 
 
@@ -22,7 +22,7 @@ function ask(){
             answers.name  = findNoFile(answers.name);
             inquirer.prompt([{
                 type: 'confirm',
-                message: `已经存在同名文件夹，你的文件将会存放在${answers.name}下`,
+                message: `Already exists folder with the same name, your file will be stored under ${answers.name}`,
                 name: 'ok'
             }]).then( aname => {
                 if(aname.ok){

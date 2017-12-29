@@ -1,6 +1,6 @@
 /**
- * @description  引入不同的demo来执行不同的测试用例
- * @author yuxue.yang@husor.com
+ * @description  you can introduce different demos to execute different test cases
+ * @author yuki.yang
  */
 
-require('./demo/simpleDemo.js'); // 引入不同的demo来执行不同的测试用例
+require('./src/demo.js');

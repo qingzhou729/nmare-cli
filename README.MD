@@ -1,65 +1,56 @@
 
-一个`nightmare`自动化测试脚手架。
+A `nightmare` e2e scaffolding.
 
-### 1、安装
+### 1、installation
 
 ``` 
-$ npm install -g @base/nmare --registry http://10.2.223.167:7001/
+$ npm install -g nmare-cli
 ```
-出现权限问题可以加个`sudo`试试
 
-### 2、初始化项目
-1、初始化项目
-``` bash
+### 2、Initialize the project
+```
 $ nmare init
 ```
+If there is a directory of the same name locally，We will put you in a new directory(`your-project-name + random`) for you.
 
-2、如果本地存在同名目录，我们将会为你放在新目录(`your-project-name + random`)下。
-
-### 3、目录结构说明
+### 3、Directory structure description
 ```
-your-project-name  // 初始化文件名
-│   README.md      // 使用说明
-│   package.json   // 项目信息
+your-project-name  // Initialization file name
+│   README.md      
+│   package.json   
 │   .gitignore     
-│   index.js       // 入口文件
-│   start.sh       // shell 脚本
+│   index.js       // entrance
+│   start.sh       // shell
 │
-└───demo   // 测试用例demo
-│   │   loginDemo.js  // 自动登录案例
-│   │   simpleDemo.js // 基础demo
+└───src
+│   │   demo.js
 │   
-└───login  // 自动登录处理
-    │   cookie.js  // 存放登录cookie
-    │   index.js   // 处理登录cookie
+└───login  // login demo
+    │   cookie.js
+    │   index.js
 ```
-### 4、安装依赖
+### 4、Installation dependent
 
 ```
 cd [your-project-name]
 npm install
 ```
-
-如果 `npm install`出现 `node install.js` 卡顿问题
-解决方法：
+If there is a `node install.js` stuttering problem, you can do this as below
 ```
 npm config set electron_mirror=https://npm.taobao.org/mirrors/electron/
 ```
 
-或者手动`在~/.npmrc` 添加
+Or manually add in `~/.npmrc`
 ```
 electron_mirror="https://npm.taobao.org/mirrors/electron/"
 ```
 
-再次`npm install`请先删掉之前的`node_modules`
+once again `npm install`, please delete before`node_modules`.
 
-参考链接：https://segmentfault.com/q/1010000007594059
+reference link: https://segmentfault.com/q/1010000007594059
 
-### 5、运行项目
+### 5、Run the project
 ``` bash
 node index.js
 ```
-
-可以修改`index.js`中引入的`demo`来启动不同的测试用例。
-
-目前的demo有: (1）简单使用`demo/simpleDemo.js` (2) 自动登录`demo/loginDemo.js
+You can write test cases under `./src` or `./index.js`.

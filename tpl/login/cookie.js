@@ -1,5 +1,5 @@
  /**
- * @description 一个有效的登录cookie
+ * @description a valid login cookie
  * @param {loginCookie} 
  */
 module.exports.loginCookie = '';
