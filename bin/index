@@ -1,0 +1,38 @@
+#!/usr/bin/env node
+
+/**
+ * @description nmare
+ * @author yuxue.yang@husor.com
+ */
+
+
+const fs = require("fs");
+const path = require("path");
+const exists = require('fs').existsSync;
+const render = require('../lib/render');
+const opts = require('../lib/options');
+const inquirer = require('inquirer');
+const prompt = require('../lib/prompt');
+const { findNoFile } = require('../lib/random');
+
+ask();
+function ask(){
+    inquirer.prompt(opts).then( answers => {
+        if(exists(`${process.cwd()}/${answers.name}`)){
+            answers.name  = findNoFile(answers.name);
+            inquirer.prompt([{
+                type: 'confirm',
+                message: `已经存在同名文件夹，你的文件将会存放在${answers.name}下`,
+                name: 'ok'
+            }]).then( aname => {
+                if(aname.ok){
+                    render(path.resolve(__dirname, '../tpl'), `${process.cwd()}/${answers.name}`, answers);
+                    prompt(answers.name);
+                }
+            })
+        } else {
+            render(path.resolve(__dirname, '../tpl'), `${process.cwd()}/${answers.name}`, answers);
+            prompt(answers.name);
+        }        
+    });
+}

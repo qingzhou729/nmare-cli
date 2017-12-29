@@ -1,0 +1,96 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'login',
+1 verbose cli   '-—registry',
+1 verbose cli   'http://10.2.223.167:7001/' ]
+2 info using npm@3.10.8
+3 info using node@v6.9.0
+4 verbose adduser before first PUT { _id: 'org.couchdb.user:yuxue.yang',
+4 verbose adduser   name: 'yuxue.yang',
+4 verbose adduser   password: 'XXXXX',
+4 verbose adduser   email: 'yuxue.yang@husor.com',
+4 verbose adduser   type: 'user',
+4 verbose adduser   roles: [],
+4 verbose adduser   date: '2017-12-27T08:29:31.115Z' }
+5 verbose request uri http://10.2.223.167:7001/-/user/org.couchdb.user:yuxue.yang
+6 verbose request new user, so can't send auth
+7 info attempt registry request try #1 at 16:29:31
+8 verbose request id fa29c676ad1803dc
+9 http request PUT http://10.2.223.167:7001/-/user/org.couchdb.user:yuxue.yang
+10 http 409 http://10.2.223.167:7001/-/user/org.couchdb.user:yuxue.yang
+11 verbose headers { 'x-current-requests': '1',
+11 verbose headers   'content-type': 'application/json; charset=utf-8',
+11 verbose headers   'x-readtime': '8',
+11 verbose headers   'content-length': '63',
+11 verbose headers   date: 'Wed, 27 Dec 2017 08:25:29 GMT' }
+12 verbose request invalidating /Users/yangyuxue/.npm/10.2.223.167_7001/-/user/org.couchdb.user_3Ayuxue.yang on PUT
+13 verbose adduser update existing user
+14 verbose request uri http://10.2.223.167:7001/-/user/org.couchdb.user:yuxue.yang?write=true
+15 verbose request no auth needed
+16 info attempt registry request try #1 at 16:29:31
+17 http request GET http://10.2.223.167:7001/-/user/org.couchdb.user:yuxue.yang?write=true
+18 http 200 http://10.2.223.167:7001/-/user/org.couchdb.user:yuxue.yang?write=true
+19 verbose headers { 'x-current-requests': '1',
+19 verbose headers   'content-type': 'application/json; charset=utf-8',
+19 verbose headers   etag: '"14d-RCNrrlGO5dhAYvFrOA728aftqds"',
+19 verbose headers   'x-readtime': '3',
+19 verbose headers   'content-length': '333',
+19 verbose headers   date: 'Wed, 27 Dec 2017 08:25:29 GMT' }
+20 verbose adduser userobj { _id: 'org.couchdb.user:yuxue.yang',
+20 verbose adduser   name: 'yuxue.yang',
+20 verbose adduser   password: 'XXXXX',
+20 verbose adduser   email: 'yuxue.yang@husor.com',
+20 verbose adduser   type: 'user',
+20 verbose adduser   roles: [],
+20 verbose adduser   date: '2017-12-27T08:29:31.115Z' }
+21 verbose request uri http://10.2.223.167:7001/-/user/org.couchdb.user:yuxue.yang/-rev/1-25d50d3f40a79cb2b8401ce041c71ee1
+22 verbose request updating existing user; sending authorization
+23 info attempt registry request try #1 at 16:29:31
+24 http request PUT http://10.2.223.167:7001/-/user/org.couchdb.user:yuxue.yang/-rev/1-25d50d3f40a79cb2b8401ce041c71ee1
+25 http 401 http://10.2.223.167:7001/-/user/org.couchdb.user:yuxue.yang/-rev/1-25d50d3f40a79cb2b8401ce041c71ee1
+26 verbose headers { 'x-current-requests': '1',
+26 verbose headers   'content-type': 'application/json; charset=utf-8',
+26 verbose headers   'x-readtime': '3',
+26 verbose headers   'content-length': '47',
+26 verbose headers   date: 'Wed, 27 Dec 2017 08:25:29 GMT' }
+27 verbose request invalidating /Users/yangyuxue/.npm/10.2.223.167_7001/-/user/org.couchdb.user_3Ayuxue.yang on PUT
+28 verbose adduser back [ { Error: unauthorized Login first: -/user/org.couchdb.user:yuxue.yang/-rev/1-25d50d3f40a79cb2b8401ce041c71ee1
+28 verbose adduser       at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:302:12)
+28 verbose adduser       at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:290:14)
+28 verbose adduser       at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:210:14)
+28 verbose adduser       at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:187:22)
+28 verbose adduser       at emitTwo (events.js:106:13)
+28 verbose adduser       at Request.emit (events.js:191:7)
+28 verbose adduser       at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1044:10)
+28 verbose adduser       at emitOne (events.js:96:13)
+28 verbose adduser       at Request.emit (events.js:188:7)
+28 verbose adduser       at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:965:12) statusCode: 401, code: 'E401' },
+28 verbose adduser   { error: 'unauthorized', reason: 'Login first' },
+28 verbose adduser   '{"error":"unauthorized","reason":"Login first"}' ]
+29 warn adduser Incorrect username or password
+29 warn adduser You can reset your account by visiting:
+29 warn adduser
+29 warn adduser     https://npmjs.org/forgot
+30 verbose stack Error: unauthorized Login first: -/user/org.couchdb.user:yuxue.yang/-rev/1-25d50d3f40a79cb2b8401ce041c71ee1
+30 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:302:12)
+30 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:290:14)
+30 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:210:14)
+30 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:187:22)
+30 verbose stack     at emitTwo (events.js:106:13)
+30 verbose stack     at Request.emit (events.js:191:7)
+30 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1044:10)
+30 verbose stack     at emitOne (events.js:96:13)
+30 verbose stack     at Request.emit (events.js:188:7)
+30 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:965:12)
+31 verbose statusCode 401
+32 verbose cwd /Users/yangyuxue/work/beibei/develop/h5_e2e_cli
+33 error Darwin 16.3.0
+34 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "login" "-—registry" "http://10.2.223.167:7001/"
+35 error node v6.9.0
+36 error npm  v3.10.8
+37 error code E401
+38 error unauthorized Login first: -/user/org.couchdb.user:yuxue.yang/-rev/1-25d50d3f40a79cb2b8401ce041c71ee1
+39 error If you need help, you may report this error at:
+39 error     <https://github.com/npm/npm/issues>
+40 verbose exit [ 1, true ]
